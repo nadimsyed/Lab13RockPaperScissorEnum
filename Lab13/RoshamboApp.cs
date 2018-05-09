@@ -10,8 +10,6 @@ namespace Lab13
     {
         static void Main(string[] args)
         {
-            //TODO: Go through and validate
-            //TODO: Add names look at lab
             UserSelector userSelector = new UserSelector();
 
             RockSelector rockSelector = new RockSelector();
@@ -36,12 +34,11 @@ namespace Lab13
                     {
                         Roshambo roshambo = userSelector.generateRoShambo();
                         Roshambo rock = rockSelector.generateRoShambo();
-                        //TODO: make validator class and validate in userSelector
                         if ((rock.CompareTo(roshambo)) == 0)
                         {
                             Console.WriteLine($"{userSelector.Name} chose {roshambo}");
                             Console.WriteLine($"{rockSelector.Name} chose {rock}");
-                            Console.WriteLine("Tie!");
+                            Console.WriteLine("Tie!\n\n");
                             tieCounter++;
                         }
                         else
@@ -50,14 +47,14 @@ namespace Lab13
                             {
                                 Console.WriteLine($"{userSelector.Name} chose {roshambo}");
                                 Console.WriteLine($"{rockSelector.Name} chose {rock}");
-                                Console.WriteLine("You Win!");
+                                Console.WriteLine("You Win!\n\n");
                                 winCounter++;
                             }
                             else if (roshambo == Roshambo.scissors)
                             {
                                 Console.WriteLine($"{userSelector.Name} chose {roshambo}");
                                 Console.WriteLine($"{rockSelector.Name} chose {rock}");
-                                Console.WriteLine("You Lose!");
+                                Console.WriteLine("You Lose!\n\n");
                                 lossCounter++;
                             }
                         }
@@ -70,8 +67,8 @@ namespace Lab13
                         if ((rando.CompareTo(roshambo)) == 0)
                         {
                             Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                            Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                            Console.WriteLine("Tie!");
+                            Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                            Console.WriteLine("Tie!\n\n");
                             tieCounter++;
                         }
                         else
@@ -81,15 +78,15 @@ namespace Lab13
                                 if (roshambo == Roshambo.paper)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Win!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Win!\n\n");
                                     winCounter++;
                                 }
                                 else if (roshambo == Roshambo.scissors)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Lose!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Lose!\n\n");
                                     lossCounter++;
                                 }
                             }
@@ -98,15 +95,15 @@ namespace Lab13
                                 if (roshambo == Roshambo.scissors)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Win!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Win!\n\n");
                                     winCounter++;
                                 }
                                 else if (roshambo == Roshambo.rock)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Lose!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Lose!\n\n");
                                     lossCounter++;
                                 }
                             }
@@ -115,37 +112,42 @@ namespace Lab13
                                 if (roshambo == Roshambo.rock)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Win!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Win!\n\n");
                                     winCounter++;
                                 }
                                 else if (roshambo == Roshambo.paper)
                                 {
                                     Console.WriteLine($"{userSelector.Name} chose {roshambo}");
-                                    Console.WriteLine($"{rockSelector.Name} chose {rando}");
-                                    Console.WriteLine("You Lose!");
+                                    Console.WriteLine($"{randomSelector.Name} chose {rando}");
+                                    Console.WriteLine("You Lose!\n\n");
                                     lossCounter++;
                                 }
                             }
                         }
-                    } 
+                    }
+                    else
+                    {
+                        Console.WriteLine("\n\n\t\t\t\t     Invalid input, we'll restart\n\n");
+                        continue;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input, we'll restart");
+                    Console.WriteLine("\n\n\t\t\t\t     Invalid input, we'll restart\n\n");
                     continue;
                 }
                 truth = Continue();
             }
-            Console.WriteLine($"The amount of Wins during this session was {winCounter}.");
-            Console.WriteLine($"The amount of Losses during this session was {lossCounter}.");
-            Console.WriteLine($"The amount of Ties during this session was {tieCounter}.");
+            Console.WriteLine($"\n\n\t\t\t\t     The amount of Wins during this session was {winCounter}.");
+            Console.WriteLine($"\n\n\t\t\t\t     The amount of Losses during this session was {lossCounter}.");
+            Console.WriteLine($"\n\n\t\t\t\t     The amount of Ties during this session was {tieCounter}.");
         }
         public static bool Continue()
         {
             while (true)
             {
-                Console.Write("\t\t\t\t\t\tContinue? (y/n): ");
+                Console.Write("\t\t\t\t\tContinue? (y/n): ");
 
                 string jump = Console.ReadLine().ToUpper();
 

@@ -16,42 +16,60 @@ namespace Lab13
 
         public UserSelector()
         {
-            Console.Write("What is your name?: ");
-            string nam = Console.ReadLine();
-
-            if (!Validator.IntChecker(nam))
+            while (true)
             {
-                Name = nam;
+                Console.Write("What is your name?: ");
+                string nam = Console.ReadLine();
+
+                if (!Validator.IntChecker(nam) && !Validator.SpaceEnterChecker(nam))
+                {
+                    Name = nam;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter a name below!\n\n");
+                    continue;
+                }
             }
         }
 
         public override Roshambo generateRoShambo()
         {
-            //Do below code in main, then pass in string. Validate string before bringing it in.
-            //Nevermind, can't pass in string since abstract class didnt have argument in method
-            
-            Console.Write("Which do you select? Rock(1), paper(2),  or scissors(3). Please enter 1-3: ");
-            string input = Console.ReadLine();
-            //TODO: Make a validator class that does the int validation for me instead of here. Validate before being
-            //      passed in.
-            
-            if (Validator.IntChecker(input))
+            Roshambo blah;
+            while (true)
             {
-                int number = int.Parse(input);
-                if (number == 1)
+                Console.Write("Which do you select? Rock(1), paper(2),  or scissors(3). Please enter 1-3: ");
+                string input = Console.ReadLine();
+                if (Validator.IntChecker(input))
                 {
-                    return Roshambo.rock;
+                    int number = int.Parse(input);
+                    blah = (Roshambo)number-1;
+                    if (number == 1)
+                    {
+                        return Roshambo.rock;
+                    }
+                    else if (number == 2)
+                    {
+                        return Roshambo.paper;
+                    }
+                    else if (number == 3)
+                    {
+                        return Roshambo.scissors;
+                    }
+                    else if (number <= 0 || number > 3)
+                    {
+                        Console.WriteLine("\n\nNot a number in range! Let's try again.\n");
+                        continue;
+                    }
                 }
-                else if (number == 2)
+                else
                 {
-                    return Roshambo.paper;
+                    Console.WriteLine("\n\nNot a number! Let's try again.\n");
+                    continue;
                 }
-                else if (number == 3)
-                {
-                    return Roshambo.scissors;
-                }
+
             }
-            return Roshambo.rock;
         }
 
     }   

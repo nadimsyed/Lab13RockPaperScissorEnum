@@ -9,8 +9,6 @@ namespace Lab13
 {
     class Validator
     {
-        //TODO: Add Space and Enter validators, as well as other validations I did in TaskList(as well as other
-        //      past projects I did. Can use it as a revolving validator class inshaAllah
         public static bool DoubleChecker(string x)
         {
             return double.TryParse(x, out double work);
