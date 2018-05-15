@@ -139,9 +139,9 @@ namespace Lab13
                 }
                 truth = Continue();
             }
-            Console.WriteLine($"\n\n\t\t\t\t     The amount of Wins during this session was {winCounter}.");
-            Console.WriteLine($"\n\n\t\t\t\t     The amount of Losses during this session was {lossCounter}.");
-            Console.WriteLine($"\n\n\t\t\t\t     The amount of Ties during this session was {tieCounter}.");
+            Console.WriteLine($"\n\n\t\t\t     The amount of Wins during this session was {winCounter}.");
+            Console.WriteLine($"\n\n\t\t\t     The amount of Losses during this session was {lossCounter}.");
+            Console.WriteLine($"\n\n\t\t\t     The amount of Ties during this session was {tieCounter}.");
         }
         public static bool Continue()
         {

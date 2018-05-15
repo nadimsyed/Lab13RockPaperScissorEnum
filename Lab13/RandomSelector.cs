@@ -22,7 +22,7 @@ namespace Lab13
         public override Roshambo generateRoShambo()
         {
             Random rnd = new Random();
-            int ro = rnd.Next(0, 2);
+            int ro = rnd.Next(0, 3);
             return (Roshambo)ro;
 
             //if(ro == 1)
